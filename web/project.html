@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    <style>
+        ul {
+            padding: 0 0 0 24px;
+        }
+
+        .pm-nav {
+            font-size: 12px;
+            line-height: 28px;
+        }
+
+        .no-select {
+            user-select: none;
+        }
+
+        .pm-nav a {
+            color: #7e7e7e;
+        }
+
+        .pm-nav a:hover {
+            text-decoration: none;
+            color: #f26b3a;
+        }
+
+        .pm-nav li {
+            list-style: none;
+        }
+        .pm-nav-req {
+            padding-left: 8px;
+        }
+        .pm-nav-req > span {
+            font-weight: bold;
+        }
+
+        .pm-nav-dir ul {
+            padding-left: 1rem;
+            display: none;
+        }
+        .pm-nav-dir-name a {
+            position: relative;
+            left: -12px;
+        }
+        .pm-nav-dir-open>ul {
+            display: block;
+        }
+        .pm-nav-dir-icon {
+            cursor: pointer;
+            position: relative;
+            left: -12px;
+        }
+        .pm-nav-dir-icon:not(:hover) {
+            opacity: .8;
+        }
+        .rotate-90 svg {
+            transform: rotate(-90deg);
+        }
+
+        .docs-item::after {
+            width: 100%;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .pm-h1, .pm-h2, .pm-h3, .pm-h4, .pm-h5, .pm-h6 {
+            margin: 1.5em 0.5em;
+        }
+        .pm-h4 {
+            font-weight: 600;
+            font-size: 14px;
+            color: #282828;
+        }
+
+        /* method */
+        .pm-method-get {
+            color: #3eb63e;
+        }
+        .pm-method-get::after {
+            content: "GET";
+        }
+        .pm-method-post {
+            color: #f5a623;
+        }
+        .pm-method-post::after {
+            content: "POST";
+        }
+        .pm-method-put {
+            color: #4a90e2;
+        }
+        .pm-method-put::after {
+            content: "PUT";
+        }
+        .pm-method-del {
+            color: #ed4b48;
+        }
+        .pm-method-del::after {
+            content: "DEL";
+        }
+        .pm-method-patch {
+            color: #666;
+        }
+        .pm-method-patch::after {
+            content: "PATCH";
+        }
+        .pm-markdown {
+            color: #282828;
+        }
+
+        .docs-desc-title-url {
+            background: #f4f4f4;
+            line-height: 24px;
+            border: 1px solid #d4d4d4;
+            border-radius: 3px;
+            font-size: 14px;
+            padding: 4px 8px;
+            word-break: break-all;
+            width: 100%;
+        }
+        .docs-desc-body {
+            overflow-wrap: break-word;
+            word-break: break-word;
+            margin: 16px 0;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .docs-request-body-title {
+            display: inline-block;
+        }
+        .docs-request-body-mode {
+            color: #7e7e7e;
+        }
+        .docs-request-header {
+
+        }
+        .pm-request-table {
+            border-color: #d4d4d4;
+        }
+        .pm-request-table > tbody > tr > td {
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+        .pm-request-table > tbody > tr > td:first-child {
+            width: 30%;
+        }
+        .pm-table {
+            width: 100%;
+            border: 1px solid #eaeaea;
+            border-radius: 3px;
+            border-spacing: 0;
+            border-collapse: separate;
+            font-size: 14px;
+            line-height: 24px;
+        }
+        .pm-table > tbody > tr > td {
+            min-width: 120px;
+            margin: 0;
+            padding: 8px;
+            border: none;
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light shadow-sm">
+        <span class="navbar-brand mb-0 h1">Navbar</span>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col pm-nav">
+                <ul class="no-select">
+                    <li>
+                        <a href="">介绍</a>
+                    </li>
+                    <li class="pm-nav-dir ">
+                        <div class="pm-nav-dir-name">
+                            <i class="pm-nav-dir-icon rotate-90">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path fill-rule="evenodd" d="M8 11L4 6h8l-4 5z" fill="#A9A9A9"></path>
+                                </svg>
+                            </i>
+                            <a href="javascript:;">Mix Asset</a>
+                        </div>
+                        <ul>
+                            <li class="pm-nav-dir">
+                                <div class="pm-nav-dir-name">
+                                    <i class="pm-nav-dir-icon rotate-90">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path fill-rule="evenodd" d="M8 11L4 6h8l-4 5z" fill="#A9A9A9"></path>
+                                        </svg>
+                                    </i>
+                                    <a href="javascript:;">dir-2</a>
+                                </div>
+                                <ul>
+                                    <li class="pm-nav-req">
+                                        <span class="pm-method-get"></span>
+                                        <a href="#item-3-2">request 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="pm-nav-req">
+                                <span class="pm-method-post"></span> <a href="">name -2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="pm-nav-req">
+                        <span class="pm-method-post"></span> <a href="">name</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-9">
+               <div class="docs-item">
+                   <div class="docs-desc">
+                       <h1 class="pm-h1">Title</h1>
+                   </div>
+                   <div class="docs-desc-body pm-markdown"></div>
+               </div>
+               <div class="docs-item">
+                   <div class="docs-desc">
+                       <h2 class="pm-h2 docs-desc-title">
+                           <span class="pm-method-get"></span>
+                           all
+                       </h2>
+                   </div>
+                   <div class="docs-desc-title-url">{{host}}/query</div>
+                   <div class="docs-desc-body">
+                       <div class="pm-markdown">
+                           request desc
+                       </div>
+                       <div class="docs-request-header">
+                           <h4 class="pm-h4">Headers</h4>
+                           <table class="pm-request-table pm-table">
+                               <tbody>
+                                   <tr>
+                                       <td>Content-Type</td>
+                                       <td>application/json</td>
+                                       <td></td>
+                                   </tr>
+                                   <tr>
+                                        <td>Content-Type</td>
+                                        <td>application/json</td>
+                                        <td></td>
+                                    </tr>
+                               </tbody>
+                           </table>
+                       </div>
+                       <div class="div docs-request-params">
+                           <h4 class="pm-h4">Params</h4>
+                           <table class="pm-request-table pm-table">
+                               <tbody>
+                                   <tr>
+                                       <td>AppName</td>
+                                       <td>mix</td>
+                                       <td></td>
+                                   </tr>
+                               </tbody>
+                            </table>
+                       </div>
+                       <div class="div docs-request-body">
+                           <h4 class="pm-h4 docs-request-body-title">Body</h4>
+                           <span class="docs-request-body-mode">formdata</span>
+                           <table class="pm-request-table pm-table">
+                               <tbody>
+                                   <tr>
+                                       <td>AppName</td>
+                                       <td>mix</td>
+                                       <td></td>
+                                   </tr>
+                               </tbody>
+                            </table>
+                            <pre>request body</pre>
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.querySelectorAll(".pm-nav-dir-name").onclick = function (evt) {
+            console.log(this)
+            console.log(evt)
+        }
+        $(".pm-nav-dir-icon, .pm-nav-dir-name > a").click(function () {
+            $(this).parents(".pm-nav-dir:first").toggleClass("pm-nav-dir-open").find("i:first").toggleClass("rotate-90")
+        })
+    </script>
+</body>
+
+</html>
