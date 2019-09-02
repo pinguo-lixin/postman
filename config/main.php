@@ -8,6 +8,8 @@ return [
     'aliases' => [
         '@App' => '@app/App',
         '@postman' => '@app/postman',
+        '@npm' => '@vendor/npm-asset',
+        '@bower' => '@vendor/bower-asset',
     ],
     'components' => [
         'log' => [

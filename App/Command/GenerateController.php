@@ -10,9 +10,10 @@ class GenerateController extends Controller
 {
     public function actionMarkdown($name)
     {
-        $generator = new DocGenerate($name);
+        $file = Yii::getAlias('@postman/' . $name . '.postman_collection.json');
+        $generator = new DocGenerate($file);
         $provider = new Markdown();
 
-        $generator->generate($provider);
+        $generator->generate($provider, Yii::getAlias('@runtime/' . $name . '.md'));
     }
 }

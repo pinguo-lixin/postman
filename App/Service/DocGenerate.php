@@ -8,16 +8,12 @@ use yii\helpers\Json;
 
 class DocGenerate
 {
-    const POSTMAN_FILE_SUFFIX = '.postman_collection.json';
-    
-    protected $project;
     protected $postmanFile;
     protected $mainEntity;
 
-    public function __construct($project)
+    public function __construct($postman)
     {
-        $this->project = $project;
-        $this->postmanFile = Yii::getAlias('@postman/' . $project . static::POSTMAN_FILE_SUFFIX);
+        $this->postmanFile = $postman;
         
         $data = file_get_contents($this->postmanFile);
         if (false === $data) {
@@ -27,12 +23,8 @@ class DocGenerate
         $this->mainEntity = Main::instance(Json::decode($data));
     }
 
-    public function generate(GeneratorProvider $generator, $savefile = '')
+    public function generate(GeneratorProvider $generator, $savefile)
     {
-        if ($savefile === '') {
-            $savefile = Yii::getAlias('@runtime/' . $this->project . '.md');
-        }
-
         file_put_contents($savefile, $generator->parse($this->mainEntity));
     }
 }

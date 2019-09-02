@@ -11,6 +11,8 @@ return ArrayHelper::merge(
                 'enablePrettyUrl' => true,
                 'showScriptName' => false,
                 'rules' => [
+                    'project/download' => 'project/download',
+                    'project/upload' => 'project/upload',
                     'project/<name:\w+>' => 'project/show',
                 ],
             ],

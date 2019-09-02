@@ -105,9 +105,7 @@ class Markdown implements GeneratorProvider
                 static $tpl = <<<'REQ_BODY'
 <details>
 <summary>%s</summary>
-<pre><code>
-%s
-</code></pre>
+<pre><code>%s</code></pre>
 </details>
 REQ_BODY;
                 echo sprintf($tpl, '查看请求', $req->body->raw), PHP_EOL;
@@ -135,9 +133,7 @@ REQ_BODY;
 static $tpl = <<<'RESPONSE'
 <details>
 <summary>%s</summary>
-<pre><code>
-%s
-</code></pre>
+<pre><code>%s</code></pre>
 </details>
 RESPONSE;
         

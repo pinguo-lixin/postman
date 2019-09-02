@@ -1,0 +1,1835 @@
+{
+	"info": {
+		"_postman_id": "e2db2040-a25c-42f3-952f-37fd46ba0c8c",
+		"name": "bmall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "qa",
+			"item": [
+				{
+					"name": "backend",
+					"item": [
+						{
+							"name": "product",
+							"item": [
+								{
+									"name": "all",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/backend/product/all?sig={{sig}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"backend",
+												"product",
+												"all"
+											],
+											"query": [
+												{
+													"key": "sig",
+													"value": "{{sig}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "one",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id",
+													"value": "11422",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/backend/product/one?sig={{sig}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"backend",
+												"product",
+												"one"
+											],
+											"query": [
+												{
+													"key": "sig",
+													"value": "{{sig}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "pgo",
+			"item": [
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/backend/product/all?pageSize=2&page=320",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"product",
+								"all"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "320"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MIX Assets",
+			"item": [
+				{
+					"name": "Create Tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Mix-Auth",
+								"value": "{{mixAuthHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"EDIT_OVERLAY_IMAGE\",\n\t\"key\": \"tag-key-1\",\n\t\"name\": {\n\t\t\"en\": \"tag-key-1\",\n\t\t\"zh-Hans\": \"Tag-Key-1\",\n\t\t\"ko-KR\": \"Tag-key-1\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{host}}/backend/mix/asset/tag",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"mix",
+								"asset",
+								"tag"
+							]
+						},
+						"description": "创建一个Tag。name中**必须**配置英语下的值。"
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"type\": \"FILTER\",\n\t\"key\": \"unique key-1\",\n\t\"name\": {\n\t\t\"en\": \"en-1\",\n\t\t\"zh-Hans\": \"中文\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset/tag",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset",
+										"tag"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Aug 2019 08:41:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d663e39006b981c"
+								},
+								{
+									"key": "X-Cost",
+									"value": "0.557"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"key\": \"unique key-1\"\n    },\n    \"status\": 200,\n    \"message\": \"\",\n    \"serverTime\": 1566981690.2881,\n    \"exetime\": \"1566981689755-1566981690288\"\n}"
+						},
+						{
+							"name": "failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"type\": \"FILTER\",\n\t\"key\": \"unique key-1\",\n\t\"name\": {\n\t\t\"en\": \"en-1\",\n\t\t\"zh-Hans\": \"中文\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset/tag",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset",
+										"tag"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Aug 2019 08:41:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"key\": \"Key \\\"unique key-1\\\" has already been taken.\"\n    },\n    \"status\": 400,\n    \"message\": \"\",\n    \"serverTime\": 1566981706.4153,\n    \"exetime\": \"1566981705898-1566981706415\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Query Tag",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Mix-Auth",
+								"type": "text",
+								"value": "{{mixAuthHeader}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/backend/mix/asset/tag?type=EDIT_OVERLAY_IMAGE",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"mix",
+								"asset",
+								"tag"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "EDIT_OVERLAY_IMAGE",
+									"description": "optional"
+								},
+								{
+									"key": "lang",
+									"value": "ko-KR",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "key",
+									"value": "unique key-2",
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						},
+						"description": "查询Tag，不分页。"
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/backend/mix/asset/tag",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset",
+										"tag"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "FILTER",
+											"disabled": true
+										},
+										{
+											"key": "lang",
+											"value": "ko-KR",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "12345",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Aug 2019 09:46:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d664d66006b9844"
+								},
+								{
+									"key": "X-Cost",
+									"value": "0.772"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"type\": \"FILTER\",\n            \"name\": {\n                \"en\": \"en-1\",\n                \"zh-Hans\": \"中文\"\n            },\n            \"showName\": \"中文\",\n            \"key\": \"231123\"\n        },\n        {\n            \"type\": \"FILTER\",\n            \"name\": {\n                \"en\": \"en-name\",\n                \"zh-Hans\": \"中文2\"\n            },\n            \"showName\": \"中文2\",\n            \"key\": \"12345\"\n        },\n        {\n            \"type\": \"FILTER\",\n            \"name\": {\n                \"en\": \"en-1\",\n                \"zh-Hans\": \"中文\"\n            },\n            \"showName\": \"中文\",\n            \"key\": \"2311323\"\n        },\n        {\n            \"type\": \"FILTER\",\n            \"name\": {\n                \"en\": \"en-1\",\n                \"zh-Hans\": \"中文\"\n            },\n            \"showName\": \"中文\",\n            \"key\": \"unique key-1\"\n        },\n        {\n            \"type\": \"EDIT_OVERLAY_IMAGE\",\n            \"name\": {\n                \"en\": \"en-1\",\n                \"zh-Hans\": \"中文\",\n                \"ko-KR\": \"un\"\n            },\n            \"showName\": \"en-1\",\n            \"key\": \"unique key-2\"\n        }\n    ],\n    \"status\": 200,\n    \"message\": \"ok\",\n    \"serverTime\": 1566985575.3804,\n    \"exetime\": \"1566985574652-1566985575380\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Rename Tag",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Mix-Auth",
+								"value": "{{mixAuthHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"key\": \"tag-key-1\",\n\t\t\"name\": {\n\t\t\t\"en\": \"tag-key-1\",\n\t\t\t\"zh-Hans\": \"tag-key-1-中文\",\n\t\t\t\"ko-KR\": \"u1n\"\n\t\t}\n\t}\n]"
+						},
+						"url": {
+							"raw": "{{host}}/backend/mix/asset/tag/rename",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"mix",
+								"asset",
+								"tag",
+								"rename"
+							]
+						},
+						"description": "批量重命名Tag。name中不存在的语言将被删除，**英语**必须。"
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n\t{\n\t\t\"key\": \"unique key-2\",\n\t\t\"name\": {\n\t\t\t\"en\": \"en-1\",\n\t\t\t\"zh-Hans\": \"中23文\",\n\t\t\t\"ko-KR\": \"u1n\"\n\t\t}\n\t}\n]\n\n\n"
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset/rename",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset",
+										"rename"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Aug 2019 10:18:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d6654e1006b9859"
+								},
+								{
+									"key": "X-Cost",
+									"value": "0.063"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        \"unique key-2\"\n    ],\n    \"status\": 200,\n    \"message\": \"ok\",\n    \"serverTime\": 1566987489.1047,\n    \"exetime\": \"1566987489060-1566987489104\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change Tag Order",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Mix-Auth",
+								"value": "{{mixAuthHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"EDIT_OVERLAY_IMAGE\",\n\t\"keys\": [\n\t\t\"unique key-2\",\n\t\t\"unique key-3\"\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/backend/mix/asset/tag/order",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"mix",
+								"asset",
+								"tag",
+								"order"
+							]
+						},
+						"description": "调整某个分类下Tag的排序值。keys参数须包括当前分类下的全部tag key。"
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"type\": \"EDIT_OVERLAY_IMAGE\",\n\t\"keys\": [\n\t\t\"unique key-2\",\n\t\t\"unique key-3\"\n\t]\n}"
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset/tag/order",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset",
+										"tag",
+										"order"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Aug 2019 10:36:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d66591c006b9869"
+								},
+								{
+									"key": "X-Cost",
+									"value": "0.518"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"status\": 200,\n    \"message\": \"ok\",\n    \"serverTime\": 1566988572.7273,\n    \"exetime\": \"1566988572231-1566988572727\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload Asset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Mix-Auth",
+								"type": "text",
+								"value": "{{mixAuthHeader}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pkg_file",
+									"description": "Required  资源包文件",
+									"type": "file",
+									"src": "/C:/Users/pinguo/Pictures/head_img/200.jpg"
+								},
+								{
+									"key": "icon_file",
+									"description": "Required  资源包 icon 图片",
+									"type": "file",
+									"src": "/C:/Users/pinguo/Pictures/head_img/微信图片_20181206094553.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/backend/mix/asset/package",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"mix",
+								"asset",
+								"package"
+							]
+						},
+						"description": "上传资源文件到七牛存储。"
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "pkg_file",
+											"type": "file",
+											"src": "/C:/Users/pinguo/Pictures/head_img/200.jpg"
+										},
+										{
+											"key": "icon_file",
+											"type": "file",
+											"src": "/C:/Users/pinguo/Pictures/head_img/微信图片_20181206094553.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset/package",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset",
+										"package"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2019 02:41:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d673b4c006a5443"
+								},
+								{
+									"key": "X-Cost",
+									"value": "2.343"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"pkg\": {\n            \"key\": \"newdev_201908_126e9219a962098d5c4d4a24a1c311b4\",\n            \"URL\": \"https://store-mix.c360dn.com/newdev_201908_126e9219a962098d5c4d4a24a1c311b4?e=1567050079&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:trlORBVWJf-_Ftodv8DRyoFHZ7o=\"\n        },\n        \"icon\": {\n            \"key\": \"newdev_201908_7923bf400cfd12b4149bba297ce08009\",\n            \"URL\": \"https://store-mix.c360dn.com/newdev_201908_7923bf400cfd12b4149bba297ce08009?e=1567050079&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:pBV_vImAydHBxyIGfqP1x84oPAM=\"\n        }\n    },\n    \"status\": 200,\n    \"message\": \"\",\n    \"serverTime\": 1567046479.1627,\n    \"exetime\": \"1567046476895-1567046479162\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Assets",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Mix-Auth",
+								"value": "{{mixAuthHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"FILTER\",\n\t\"name\": {\n\t\t\"en\": \"asset-2\"\n\t},\n\t\"key\": \"asset-key-2\",\n\t\"version\": 1,\n\t\"iconURL\": \"123\",\n\t\"packageURL\": \"345\",\n\t\"supportedPlatform\": 3,\n\t\"supportedLang\": [\"en\", \"zh-Hans\"],\n\t\"supportedMixRelease\": {\n\t\t\"iOS\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t},\n\t\t\"Android\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t}\n\t},\n\t\"vipOnly\": false,\n\t\"freeForUse\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"online\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"tagList\": [\"231123\"]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/backend/mix/asset",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"mix",
+								"asset"
+							]
+						},
+						"description": "创建一个 Asset。"
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"type\": \"FILTER\",\n\t\"name\": {\n\t\t\"en\": \"asset-1\"\n\t},\n\t\"key\": \"asset-key-1\",\n\t\"version\": 1,\n\t\"iconURL\": \"123\",\n\t\"packageURL\": \"345\",\n\t\"supportedPlatform\": 3,\n\t\"supportedLang\": [\"en\", \"zh-Hans\"],\n\t\"supportedMixRelease\": {\n\t\t\"iOS\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t},\n\t\t\"Android\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t}\n\t},\n\t\"vipOnly\": false,\n\t\"freeForUse\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"online\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"tagList\": [\"231123\"]\n}"
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2019 04:15:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d67515e006a544e"
+								},
+								{
+									"key": "X-Cost",
+									"value": "0.765"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"ok\",\n    \"status\": 200,\n    \"message\": \"ok\",\n    \"serverTime\": 1567052127.4887,\n    \"exetime\": \"1567052126748-1567052127488\"\n}"
+						},
+						{
+							"name": "failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"type\": \"FILTER\",\n\t\"name\": {\n\t\t\"en\": \"asset-1\"\n\t},\n\t\"key\": \"asset-key-1\",\n\t\"version\": 1,\n\t\"iconURL\": \"123\",\n\t\"packageURL\": \"345\",\n\t\"supportedPlatform\": 3,\n\t\"supportedLang\": [\"en\", \"zh-Hans\"],\n\t\"supportedMixRelease\": {\n\t\t\"iOS\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t},\n\t\t\"Android\": {\n\t\t\t\"min\": \"5.0.0\"\n\t\t}\n\t},\n\t\"vipOnly\": false,\n\t\"freeForUse\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"online\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"tagList\": [\"231123aa\"]\n}"
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2019 04:17:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"supportedMixRelease\": \"supportedMixRelease.Android 未包含key max\",\n        \"key\": \"Key \\\"asset-key-1\\\" has already been taken.\",\n        \"tagList\": \"tagList 中存在未被支持的值\"\n    },\n    \"status\": 400,\n    \"message\": \"failed\",\n    \"serverTime\": 1567052220.6287,\n    \"exetime\": \"1567052220077-1567052220628\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Put Asset",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Mix-Auth",
+								"value": "{{mixAuthHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"FILTER\",\n\t\"name\": {\n\t\t\"en\": \"asset-3\",\n\t\t\"zh-Hans\": \"资源3\"\n\t},\n\t\"key\": \"asset-key-3\",\n\t\"version\": 1,\n\t\"iconURL\": \"123\",\n\t\"packageURL\": \"345\",\n\t\"supportedPlatform\": 3,\n\t\"supportedLang\": [\"en\", \"zh-Hans\"],\n\t\"supportedMixRelease\": {\n\t\t\"iOS\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t},\n\t\t\"Android\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t}\n\t},\n\t\"vipOnly\": false,\n\t\"freeForUse\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"online\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"tagList\": [\"231123\"]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/backend/mix/asset",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"mix",
+								"asset"
+							]
+						},
+						"description": "更新一个 Asset。当指定的 key 不存在时将自动创建，或者为更新。接口幂等。"
+					},
+					"response": [
+						{
+							"name": "Update Asset",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"type\": \"FILTER\",\n\t\"name\": {\n\t\t\"en\": \"asset-3\",\n\t\t\"zh-Hans\": \"资源3\"\n\t},\n\t\"key\": \"asset-key-3\",\n\t\"version\": 1,\n\t\"iconURL\": \"123\",\n\t\"packageURL\": \"345\",\n\t\"supportedPlatform\": 3,\n\t\"supportedLang\": [\"en\", \"zh-Hans\"],\n\t\"supportedMixRelease\": {\n\t\t\"iOS\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t},\n\t\t\"Android\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t}\n\t},\n\t\"vipOnly\": false,\n\t\"freeForUse\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"online\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"tagList\": [\"231123\"]\n}"
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2019 04:32:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d675559006a5455"
+								},
+								{
+									"key": "X-Cost",
+									"value": "0.547"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"status\": 200,\n    \"message\": \"ok\",\n    \"serverTime\": 1567053145.7306,\n    \"exetime\": \"1567053145206-1567053145730\"\n}"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"type\": \"FILTER\",\n\t\"name\": {\n\t\t\"en\": \"asset-3\"\n\t},\n\t\"key\": \"asset-key-3\",\n\t\"version\": 1,\n\t\"iconURL\": \"123\",\n\t\"packageURL\": \"345\",\n\t\"supportedPlatform\": 3,\n\t\"supportedLang\": [\"en\", \"zh-Hans\"],\n\t\"supportedMixRelease\": {\n\t\t\"iOS\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t},\n\t\t\"Android\": {\n\t\t\t\"min\": \"5.0.0\",\n\t\t\t\"max\": \"\"\n\t\t}\n\t},\n\t\"vipOnly\": false,\n\t\"freeForUse\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"online\": {\n\t\t\"iOS\": true,\n\t\t\"Android\": true\n\t},\n\t\"tagList\": [\"231123\"]\n}"
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2019 04:31:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d675529006a5453"
+								},
+								{
+									"key": "X-Cost",
+									"value": "0.557"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"status\": 200,\n    \"message\": \"ok\",\n    \"serverTime\": 1567053098.0954,\n    \"exetime\": \"1567053097560-1567053098095\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Patch Assets",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Mix-Auth",
+								"value": "{{mixAuthHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"key\": \"asset-key-3\",\n\t\t\"type\": \"EDIT_OVERLAY_IMAGE\"\n\t}\n]"
+						},
+						"url": {
+							"raw": "{{host}}/backend/mix/asset",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"mix",
+								"asset"
+							]
+						},
+						"description": "批量更新 Asset。"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n\t{\n\t\t\"key\": \"asset-key-3\",\n\t\t\"type\": \"EDIT_OVERLAY_IMAGE\"\n\t}\n]"
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2019 04:49:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d675962006a5466"
+								},
+								{
+									"key": "X-Cost",
+									"value": "1.503"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"status\": 200,\n    \"message\": \"ok\",\n    \"serverTime\": 1567054179.9922,\n    \"exetime\": \"1567054178515-1567054179992\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Assets",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Mix-Auth",
+								"value": "{{mixAuthHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"keys\": [\"asset-key-3\"]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/backend/mix/asset",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"mix",
+								"asset"
+							]
+						},
+						"description": "批量删除 Asset。"
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"keys\": [\"asset-key-3\"]\n}"
+								},
+								"url": {
+									"raw": "{{host}}/backend/mix/asset",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2019 05:06:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d675d43006a547c"
+								},
+								{
+									"key": "X-Cost",
+									"value": "0.524"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"status\": 200,\n    \"message\": \"ok\",\n    \"serverTime\": 1567055172.0188,\n    \"exetime\": \"1567055171516-1567055172018\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Assets",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e50ed30e-9c5f-4305-8fe2-faedc6acb6e6",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Mix-Auth",
+								"type": "text",
+								"value": "{{mixAuthHeader}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/backend/mix/asset?",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"backend",
+								"mix",
+								"asset"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "FILTER",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "asset-2",
+									"disabled": true
+								},
+								{
+									"key": "key",
+									"value": "asset-key-1",
+									"disabled": true
+								},
+								{
+									"key": "supportedLang",
+									"value": "zh-Hant",
+									"disabled": true
+								},
+								{
+									"key": "platform",
+									"value": "Android",
+									"disabled": true
+								},
+								{
+									"key": "mixVersion",
+									"value": "5.9.0",
+									"disabled": true
+								},
+								{
+									"key": "vipOnly",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "freeForUse",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "online",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "tagName",
+									"value": "en-1",
+									"disabled": true
+								},
+								{
+									"key": "skip",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "verbose",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "查询 Asset 资源。不分页。"
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/backend/mix/asset?",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "FILTER",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "asset-2",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "asset-key-1",
+											"disabled": true
+										},
+										{
+											"key": "supportedLang",
+											"value": "zh-Hant",
+											"disabled": true
+										},
+										{
+											"key": "platform",
+											"value": "Android",
+											"disabled": true
+										},
+										{
+											"key": "mixVersion",
+											"value": "5.9.0",
+											"disabled": true
+										},
+										{
+											"key": "vipOnly",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "freeForUse",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "online",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "tagName",
+											"value": "en-1",
+											"disabled": true
+										},
+										{
+											"key": "skip",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "verbose",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2019 08:18:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d678a5b006a54e7"
+								},
+								{
+									"key": "X-Cost",
+									"value": "0.508"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"type\": \"FILTER\",\n            \"name\": \"asset-1\",\n            \"key\": \"asset-key-1\",\n            \"iconURL\": \"https://store-mix.c360dn.com/123?e=1567070315&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:S7xpHjQbwQmRjdzSEzKbtkQbggs=\",\n            \"packageURL\": \"https://store-mix.c360dn.com/345?e=1567070315&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:7L0fOmSk40yzyQWNKuEjRx3wjpU=\"\n        },\n        {\n            \"type\": \"FILTER\",\n            \"name\": \"asset-2\",\n            \"key\": \"asset-key-2\",\n            \"iconURL\": \"https://store-mix.c360dn.com/123?e=1567070315&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:S7xpHjQbwQmRjdzSEzKbtkQbggs=\",\n            \"packageURL\": \"https://store-mix.c360dn.com/345?e=1567070315&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:7L0fOmSk40yzyQWNKuEjRx3wjpU=\"\n        },\n        {\n            \"type\": \"FILTER\",\n            \"name\": \"asset-3\",\n            \"key\": \"asset-key-3\",\n            \"iconURL\": \"https://store-mix.c360dn.com/123?e=1567070315&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:S7xpHjQbwQmRjdzSEzKbtkQbggs=\",\n            \"packageURL\": \"https://store-mix.c360dn.com/345?e=1567070315&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:7L0fOmSk40yzyQWNKuEjRx3wjpU=\"\n        },\n        {\n            \"type\": \"FILTER\",\n            \"name\": \"asset-4\",\n            \"key\": \"asset-key-4\",\n            \"iconURL\": \"https://store-mix.c360dn.com/123?e=1567070315&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:S7xpHjQbwQmRjdzSEzKbtkQbggs=\",\n            \"packageURL\": \"https://store-mix.c360dn.com/345?e=1567070315&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:7L0fOmSk40yzyQWNKuEjRx3wjpU=\"\n        }\n    ],\n    \"status\": 200,\n    \"message\": \"\",\n    \"serverTime\": 1567066715.5398,\n    \"exetime\": \"1567066715056-1567066715539\"\n}"
+						},
+						{
+							"name": "ok verbose",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/backend/mix/asset?verbose=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"backend",
+										"mix",
+										"asset"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "FILTER",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "asset-2",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "asset-key-1",
+											"disabled": true
+										},
+										{
+											"key": "supportedLang",
+											"value": "zh-Hant",
+											"disabled": true
+										},
+										{
+											"key": "platform",
+											"value": "Android",
+											"disabled": true
+										},
+										{
+											"key": "mixVersion",
+											"value": "5.9.0",
+											"disabled": true
+										},
+										{
+											"key": "vipOnly",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "freeForUse",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "online",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "tagName",
+											"value": "en-1",
+											"disabled": true
+										},
+										{
+											"key": "skip",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "verbose",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2019 08:18:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-LogId",
+									"value": "ac135d678a42006a54e6"
+								},
+								{
+									"key": "X-Cost",
+									"value": "0.046"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"type\": \"FILTER\",\n            \"name\": {\n                \"en\": \"asset-1\"\n            },\n            \"key\": \"asset-key-1\",\n            \"iconURL\": \"https://store-mix.c360dn.com/123?e=1567070290&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:ANuBjiBUNj2yTj3vfeArSpl7nTc=\",\n            \"packageURL\": \"https://store-mix.c360dn.com/345?e=1567070290&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:J-T7c8RDsHttiJNtXM6Q4JCsL_A=\",\n            \"supportedPlatform\": 3,\n            \"supportedLang\": [\n                \"en\",\n                \"zh-Hans\"\n            ],\n            \"supportedMixRelease\": {\n                \"Android\": {\n                    \"min\": \"5.0.0\",\n                    \"max\": \"99.99.999\"\n                },\n                \"iOS\": {\n                    \"min\": \"5.0.0\",\n                    \"max\": \"99.99.999\"\n                }\n            },\n            \"vipOnly\": false,\n            \"freeForUse\": {\n                \"iOS\": false,\n                \"Android\": false\n            },\n            \"online\": {\n                \"iOS\": true,\n                \"Android\": true\n            },\n            \"tagList\": [\n                \"231123\"\n            ]\n        },\n        {\n            \"type\": \"FILTER\",\n            \"name\": {\n                \"en\": \"asset-2\"\n            },\n            \"key\": \"asset-key-2\",\n            \"iconURL\": \"https://store-mix.c360dn.com/123?e=1567070290&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:ANuBjiBUNj2yTj3vfeArSpl7nTc=\",\n            \"packageURL\": \"https://store-mix.c360dn.com/345?e=1567070290&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:J-T7c8RDsHttiJNtXM6Q4JCsL_A=\",\n            \"supportedPlatform\": 3,\n            \"supportedLang\": [\n                \"en\",\n                \"zh-Hans\"\n            ],\n            \"supportedMixRelease\": {\n                \"Android\": {\n                    \"min\": \"5.0.0\",\n                    \"max\": \"99.99.999\"\n                },\n                \"iOS\": {\n                    \"min\": \"5.0.0\",\n                    \"max\": \"99.99.999\"\n                }\n            },\n            \"vipOnly\": false,\n            \"freeForUse\": {\n                \"iOS\": true,\n                \"Android\": true\n            },\n            \"online\": {\n                \"iOS\": true,\n                \"Android\": true\n            },\n            \"tagList\": [\n                \"231123\"\n            ]\n        },\n        {\n            \"type\": \"FILTER\",\n            \"name\": {\n                \"en\": \"asset-3\"\n            },\n            \"key\": \"asset-key-3\",\n            \"iconURL\": \"https://store-mix.c360dn.com/123?e=1567070290&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:ANuBjiBUNj2yTj3vfeArSpl7nTc=\",\n            \"packageURL\": \"https://store-mix.c360dn.com/345?e=1567070290&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:J-T7c8RDsHttiJNtXM6Q4JCsL_A=\",\n            \"supportedPlatform\": 1,\n            \"supportedLang\": [\n                \"en\",\n                \"zh-Hans\",\n                \"zh-Hant\"\n            ],\n            \"supportedMixRelease\": {\n                \"Android\": {\n                    \"min\": \"5.10.0\",\n                    \"max\": \"99.99.999\"\n                },\n                \"iOS\": {\n                    \"min\": \"5.10.0\",\n                    \"max\": \"99.99.999\"\n                }\n            },\n            \"vipOnly\": false,\n            \"freeForUse\": {\n                \"iOS\": true,\n                \"Android\": true\n            },\n            \"online\": {\n                \"iOS\": true,\n                \"Android\": true\n            },\n            \"tagList\": [\n                \"231123\"\n            ]\n        },\n        {\n            \"type\": \"FILTER\",\n            \"name\": {\n                \"en\": \"asset-4\"\n            },\n            \"key\": \"asset-key-4\",\n            \"iconURL\": \"https://store-mix.c360dn.com/123?e=1567070290&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:ANuBjiBUNj2yTj3vfeArSpl7nTc=\",\n            \"packageURL\": \"https://store-mix.c360dn.com/345?e=1567070290&token=5taQL1r-Ldksq6PxHJA68mjtuHROSIKZSwjgr76x:J-T7c8RDsHttiJNtXM6Q4JCsL_A=\",\n            \"supportedPlatform\": 1,\n            \"supportedLang\": [\n                \"en\",\n                \"zh-Hans\",\n                \"zh-Hant\"\n            ],\n            \"supportedMixRelease\": {\n                \"Android\": {\n                    \"min\": \"5.11.0\",\n                    \"max\": \"99.99.999\"\n                },\n                \"iOS\": {\n                    \"min\": \"5.11.0\",\n                    \"max\": \"99.99.999\"\n                }\n            },\n            \"vipOnly\": false,\n            \"freeForUse\": {\n                \"iOS\": true,\n                \"Android\": true\n            },\n            \"online\": {\n                \"iOS\": true,\n                \"Android\": true\n            },\n            \"tagList\": [\n                \"231123\"\n            ]\n        }\n    ],\n    \"status\": 200,\n    \"message\": \"\",\n    \"serverTime\": 1567066690.5816,\n    \"exetime\": \"1567066690548-1567066690581\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Mix 5+ Asset 管理",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "718103c2-dbc6-4416-af14-77c65ba088cf",
+						"type": "text/javascript",
+						"exec": [
+							"var mixAuthSalt = pm.variables.get('mixAuthSalt');",
+							"var mixAuthUserEmail = pm.variables.get('mixAuthUserEmail');",
+							"var nowDate = new Date();",
+							"var timestamp  = parseInt(nowDate.getTime() / 1000);",
+							"",
+							"// calculate token value",
+							"var token = CryptoJS.MD5(mixAuthUserEmail + timestamp + mixAuthSalt)",
+							"",
+							"var authValue = mixAuthUserEmail + \"|\" + timestamp + \"|\" + token;",
+							"",
+							"pm.environment.set(\"mixAuthHeader\", authValue);",
+							"",
+							"",
+							"console.log(\"authValue: \", authValue)"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4386194c-1c10-40ee-b0db-d15cbded1cfc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "api/mix/getinfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "device",
+							"value": "SM-N9009",
+							"type": "text"
+						},
+						{
+							"key": "deviceId",
+							"value": "0391b64c",
+							"type": "text"
+						},
+						{
+							"key": "userId",
+							"value": "0120ac5cd1846a5e0a73a675",
+							"type": "text"
+						},
+						{
+							"key": "geoInfo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "locale",
+							"value": "zh-CN",
+							"type": "text"
+						},
+						{
+							"key": "system",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "appId",
+							"value": "d9bcf210547ea386",
+							"type": "text"
+						},
+						{
+							"key": "userToken",
+							"value": "a2d5NzBOODRXZnA1M1dNYkdxWG10Z3FGZnZsb1dES0Vtc2pXUzhOK0VNUGtKclVEY0JzNVJVdnlsdFpCM2JkVTNvRGllYURLKzdLYTFkSEUrK21kN2lPTHQvT3dVV2Q5Ty9SSDA1WURCcFpUeGdtQzNJckVSWFdwNlBwQktDaXV0dkdnZkhxQXRqOD0",
+							"type": "text"
+						},
+						{
+							"key": "appName",
+							"value": "MIX",
+							"type": "text"
+						},
+						{
+							"key": "platform",
+							"value": "android",
+							"type": "text"
+						},
+						{
+							"key": "mnc",
+							"value": "0391b64c",
+							"type": "text"
+						},
+						{
+							"key": "systemVersion",
+							"value": "5.0",
+							"type": "text"
+						},
+						{
+							"key": "appVersion",
+							"value": "4.8.7",
+							"type": "text"
+						},
+						{
+							"key": "mcc",
+							"value": "0391b64c",
+							"type": "text"
+						},
+						{
+							"key": "channel",
+							"value": "%E5%AE%89%E6%99%BA%E5%B8%82%E5%9C%BA",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "sig",
+							"value": "e765d53125dcdeb796c96a370181e4d0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "test-bmall.camera360.com/api/mix/getinfo",
+					"host": [
+						"test-bmall",
+						"camera360",
+						"com"
+					],
+					"path": [
+						"api",
+						"mix",
+						"getinfo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e1817ffa-310f-4e6e-bdaf-d7f4901c1e8e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b337c5f2-4a63-47dd-a4f1-8b9f7e7602dd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "cbc5946c-3912-42fe-9f17-69eadde721b8",
+			"key": "sig",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "2375a666-8fc0-4f21-a641-f7a6c84b4b45",
+			"key": "mixAuthSalt",
+			"value": "5d68a39b69d71",
+			"type": "string"
+		},
+		{
+			"id": "403e1eed-361c-47a3-bf90-25493a258bc6",
+			"key": "mixAuthUserEmail",
+			"value": "lixin@camera360.com",
+			"type": "string"
+		}
+	]
+}
